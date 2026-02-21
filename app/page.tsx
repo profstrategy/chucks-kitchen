@@ -1,7 +1,7 @@
-import Footer from "@/components/reusables/footer";
+import Onboarding from "./pages/onboarding-screen/onboarding";
 
 export default function Home() {
   return (
-    <div><Footer /></div>
+    <div><Onboarding /></div>
   );
 }

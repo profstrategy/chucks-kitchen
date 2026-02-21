@@ -1,34 +1,121 @@
 import Image from 'next/image'
 import AppHeading from './app-heading'
 import AppButton from './app-button'
-type AppCardProps = {
-    title: string,
-    description?: string,
-    imageSrc: string,
-    cartButton?: React.ReactNode,
-    exploreButton?: React.ReactNode,
-    onClick?: () => void,
-    price?: string,
+
+type BaseCardProps = {
+  title: string
+  imageSrc: string
+  imageAlt?: string     
+  onClick?: () => void
 }
-const AppCard = ({ title, description, imageSrc, onClick, price, cartButton, exploreButton }: AppCardProps) => {
-    return (
-        <div className={`bg-white flex flex-col items-center rounded-[14px] px-0.5 w-full md:w-auto ${exploreButton ? 'gap-12.5' : 'gap-6.25'}`}>
-            <Image src={imageSrc} alt={title} />
-            <div className='flex flex-col gap-1.75'>
-                <AppHeading variant='h2'>{title}</AppHeading>
-                {description && <p>{description}</p>}
-            </div>
 
-            <div>
-                {exploreButton && <AppButton variant='primary' onClick={onClick} ariaLabel={`Explore ${title}`}>{exploreButton}</AppButton>}
+type ExploreCardProps = BaseCardProps & {
+  variant: 'explore'
+  description?: never
+  price?: never
+  onAddToCart?: never
+}
 
-                {price || cartButton && <div>
-                    <p>{price}</p>
-                    <AppButton variant='primary' onClick={onClick} ariaLabel={`Order ${title}`}>Add to Cart</AppButton>
-                </div>}
-            </div>
-        </div>
-    )
+type MenuCardProps = BaseCardProps & {
+  variant: 'menu'
+  description: string
+  price: string
+  onAddToCart: () => void
+}
+
+type AppCardProps = ExploreCardProps | MenuCardProps
+
+const CARD_STYLES = {
+  explore: {
+    // w:358  pt:2 pr:4 pb:18 pl:4  gap:10
+    wrapper: 'pt-px pr-1 pb-[18px] pl-1 gap-[10px] w-[358px]',
+    imageClass: 'h-[200px]',
+  },
+  menu: {
+    // w:356  pt:2 pr:2 pb:46 pl:2  gap:25
+    wrapper: 'pt-px pr-px pb-[46px] pl-px gap-[25px] w-[356px]',
+    imageClass: 'h-[220px]',
+  },
+}
+
+
+const AppCard = (props: AppCardProps) => {
+  const { variant, title, imageSrc, imageAlt, onClick } = props
+  const { wrapper, imageClass } = CARD_STYLES[variant]
+
+  const resolvedAlt = imageAlt ?? title
+
+  return (
+    <article
+      className={`bg-white flex flex-col rounded-[14px] overflow-hidden w-full max-w-full shadow-sm hover:shadow-md transition-shadow duration-200 ${wrapper}`}
+      aria-label={variant === 'explore' ? title : undefined}
+    >
+      <div className={`relative w-full overflow-hidden rounded-[10px] ${imageClass}`}>
+        <Image
+          src={imageSrc}
+          alt={resolvedAlt}
+          fill
+          sizes="(max-width: 768px) 100vw, 360px"
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+
+      {/* ── Body ── */}
+      <div className="flex flex-col flex-1 px-1">
+
+        {/* Title */}
+        <AppHeading
+          variant="h3"
+          as="h3"
+          colorStyle="dark"
+          className={variant === 'explore' ? 'text-center' : 'text-left'}
+        >
+          {title}
+        </AppHeading>
+
+        {/* Description — menu variant only */}
+        {variant === 'menu' && (
+          <p className="text-gray-600 text-sm leading-5.5 font-normal mt-1 font-[Poppins]">
+            {props.description}
+          </p>
+        )}
+
+        {/* ── CTA row ── */}
+        {variant === 'explore' ? (
+          <div className="mt-auto pt-2 flex justify-center">
+            <AppButton
+              variant="primary"
+              onClick={onClick}
+              ariaLabel={`Explore ${title}`}
+              className="px-8"
+            >
+              Explore
+            </AppButton>
+          </div>
+        ) : (
+          <div className="mt-auto pt-4 flex items-center justify-between gap-4">
+            {/* <data> gives screen readers + scrapers a machine-readable price value */}
+            <data
+              value={props.price.replace(/[^\d.]/g, '')}
+              className="font-semibold text-[18px] text-[#FF7A18] font-[Poppins] whitespace-nowrap"
+            >
+              {props.price}
+            </data>
+
+            <AppButton
+              variant="primary"
+              onClick={props.onAddToCart}
+              ariaLabel={`Add ${title} to cart`}
+              className="px-6 py-3 text-sm"
+            >
+              Add to cart
+            </AppButton>
+          </div>
+        )}
+      </div>
+    </article>
+  )
 }
 
 export default AppCard

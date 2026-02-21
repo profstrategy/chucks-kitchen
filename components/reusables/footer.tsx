@@ -64,8 +64,7 @@ const Footer = () => {
       {/* ── Main grid ── */}
       <div className="max-w-7xl mx-auto px-6 py-17.25">
         <div
-          className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]"
-          
+          className="grid gap-10 lg:grid-cols-[300px_200px_200px_200px] md:grid-cols-2" 
         >
 
           {/* ── Brand column ── */}
@@ -101,7 +100,7 @@ const Footer = () => {
           </div>
 
           {/* ── Quick Links column ── */}
-          <nav aria-label="Quick links" className='grid m-auto'>
+          <nav aria-label="Quick links" className='md:grid md:justify-center lg:block'>
             <AppHeading variant='h2' colorStyle='light' className='font-normal leading-9 mb-4'>Quick Links</AppHeading>
             <ul className="flex flex-col gap-1 list-none p-0 m-0" role="list">
               {QUICK_LINKS.map(({ label, href }) => (
@@ -171,7 +170,7 @@ const Footer = () => {
           </nav>
 
           {/* ── Socials column ── */}
-          <nav aria-label="Social media links">
+          <nav aria-label="Social media links" className='md:grid md:justify-center lg:block'>
             {/* No header in the design — sr-only for screen readers */}
             <AppHeading variant='h2' colorStyle='light' className='font-normal leading-9 mb-4'>Social Media</AppHeading>
             <ul className="flex flex-col gap-1 list-none p-0 m-0 my-0" role="list">

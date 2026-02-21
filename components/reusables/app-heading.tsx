@@ -17,10 +17,10 @@ const colorMap: Record<ColorStyle, string> = {
 }
 
 const variantMap: Record<Variant, string> = {
-    h1: 'text-[32px] font-bold leading-[40px] md:leading-[42px] text-right',
+    h1: 'text-[32px] font-bold leading-[40px] md:leading-[42px]',
     h2: 'md:font-medium text-[24px]',
-    h3: 'text-[16px] font-medium leading-[24px] text-left',
-    h4: 'font-medium text-[14px] leading-[20px] text-center',
+    h3: 'text-[16px] font-medium leading-[24px]',
+    h4: 'font-medium text-[14px] leading-[20px]',
 }
 
 const AppHeading = (props: Props) => {
