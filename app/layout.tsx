@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Inter } from "next/font/google";
+import { Geist, Inter, Island_Moments } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const islandMoments = Island_Moments({
+  variable: "--font-island-moments",
   subsets: ["latin"],
-});
+  weight: "400",
+  fallback: ["cursive"],
+})
 
 const geistMono = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${islandMoments.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

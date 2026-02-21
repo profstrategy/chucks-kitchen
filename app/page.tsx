@@ -1,6 +1,7 @@
+import Footer from "@/components/reusables/footer";
 
 export default function Home() {
   return (
-    <div>Hello</div>
+    <div><Footer /></div>
   );
 }
