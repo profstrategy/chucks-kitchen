@@ -17,7 +17,7 @@ const colorMap: Record<ColorStyle, string> = {
 }
 
 const variantMap: Record<Variant, string> = {
-    h1: 'text-[32px] font-bold leading-[40px] md:leading-[42px]',
+    h1: 'text-[32px] md:text-[48px] font-bold leading-[40px] md:leading-[61px]',
     h2: 'font-semibold text-[24px] leading-[32px]',
     h3: 'text-[16px] font-medium leading-[24px]',
     h4: 'font-medium text-[14px] leading-[20px]',

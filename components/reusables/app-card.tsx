@@ -83,12 +83,12 @@ const AppCard = (props: AppCardProps) => {
 
         {/* ── CTA row ── */}
         {variant === 'explore' ? (
-          <div className="mt-auto pt-2 flex justify-center">
+          <div className="mt-auto pt-2 flex justify-end">
             <AppButton
-              variant="primary"
+              variant="secondary"
               onClick={onClick}
               ariaLabel={`Explore ${title}`}
-              className="px-8"
+              className="px-4 py-2 border-2"
             >
               Explore
             </AppButton>
@@ -98,7 +98,7 @@ const AppCard = (props: AppCardProps) => {
             {/* <data> gives screen readers + scrapers a machine-readable price value */}
             <data
               value={props.price.replace(/[^\d.]/g, '')}
-              className="font-semibold text-[18px] text-primary-color whitespace-nowrap"
+              className="font-semibold text-[18px] text-primary-orange whitespace-nowrap"
             >
               {props.price}
             </data>

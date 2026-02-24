@@ -55,7 +55,7 @@ const Onboarding = () => {
                 <div className="flex flex-col flex-1 px-5 pt-9.25 pb-8 gap-2.5">
 
                     {/* Brand wordmark */}
-                   <BrandLogo />
+                    <BrandLogo />
 
                     {/* Headline + description */}
                     <div className="flex flex-col gap-3">
@@ -126,13 +126,13 @@ const Onboarding = () => {
                     <header className="w-full flex justify-between">
                         <BrandLogo />
                         <Link href="/auth/sign-in">
-                        <AppButton
-                            variant="secondary"
-                            ariaLabel="Sign in to your account"
-                            className=" text-md font-semibold py-3.75 px-12 "
-                        >
-                            Sign In
-                        </AppButton>
+                            <AppButton
+                                variant="secondary"
+                                ariaLabel="Sign in to your account"
+                                className=" text-md font-semibold py-3.75 px-12 "
+                            >
+                                Sign In
+                            </AppButton>
                         </Link>
                     </header>
 
@@ -171,13 +171,15 @@ const Onboarding = () => {
                         <div className="flex flex-col gap-9">
                             {/* CTA buttons */}
                             <div className="flex flex-col gap-3">
-                                <AppButton
-                                    variant="primary"
-                                    ariaLabel="Start your order now"
-                                    className="w-full py-[18px]"
-                                >
-                                    Start Your Order
-                                </AppButton>
+                                <Link href={'/home'}>
+                                    <AppButton
+                                        variant="primary"
+                                        ariaLabel="Start your order now"
+                                        className="w-full py-[18px]"
+                                    >
+                                        Start Your Order
+                                    </AppButton>
+                                </Link>
                                 <AppButton
                                     variant="secondary"
                                     ariaLabel="Learn more about Chuks Kitchen"

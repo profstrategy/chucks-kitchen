@@ -62,7 +62,7 @@ const Footer = () => {
       aria-label="Site footer"
     >
       {/* ── Main grid ── */}
-      <div className="max-w-7xl mx-auto px-6 py-17.25">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 py-17.25">
         <div
           className="grid gap-10 lg:grid-cols-[300px_200px_200px_200px] md:grid-cols-2" 
         >

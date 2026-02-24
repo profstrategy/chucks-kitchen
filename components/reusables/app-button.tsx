@@ -9,8 +9,8 @@ type AppButtonProps = {
 }
 
 const variantStyles: Record<AppButtonProps['variant'], string> = {
-  primary: 'bg-primary-orange text-white hover:bg-orange-600 active:bg-orange-700',
-  secondary: 'bg-white text-primary-blue border-primary-blue hover:bg-blue-50 active:bg-blue-100',
+  primary: 'bg-primary-orange text-white hover:bg-orange-600 active:bg-orange-700 border-none',
+  secondary: 'bg-white text-primary-blue border-primary-blue hover:bg-blue-50 active:bg-blue-100 border-2',
 }
 
 const AppButton = (props: AppButtonProps) => {
@@ -20,7 +20,7 @@ const AppButton = (props: AppButtonProps) => {
     <button
       type={type}
       className={`
-        rounded-[10px] border-2 ${className.trim()}
+        rounded-[10px] ${className.trim()}
         focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600
         disabled:opacity-50 disabled:cursor-not-allowed
         transition-colors duration-150
