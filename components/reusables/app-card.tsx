@@ -76,7 +76,7 @@ const AppCard = (props: AppCardProps) => {
 
         {/* Description — menu variant only */}
         {variant === 'menu' && (
-          <p className="text-gray-600 text-sm leading-5.5 font-normal mt-1 font-[Poppins]">
+          <p className="text-gray-600 text-sm leading-5.5 font-normal mt-1">
             {props.description}
           </p>
         )}
@@ -98,7 +98,7 @@ const AppCard = (props: AppCardProps) => {
             {/* <data> gives screen readers + scrapers a machine-readable price value */}
             <data
               value={props.price.replace(/[^\d.]/g, '')}
-              className="font-semibold text-[18px] text-[#FF7A18] font-[Poppins] whitespace-nowrap"
+              className="font-semibold text-[18px] text-primary-color whitespace-nowrap"
             >
               {props.price}
             </data>

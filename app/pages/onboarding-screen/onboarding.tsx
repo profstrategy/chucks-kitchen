@@ -3,6 +3,7 @@ import AppHeading from "@/components/reusables/app-heading"
 import Image from "next/image"
 import OnboardingCard from "./onboarding-card"
 import Link from "next/link"
+import BrandLogo from "@/components/reusables/brand-logo"
 
 // ─── Feature items from both designs ─────────────────────────────────────────
 
@@ -38,13 +39,15 @@ const Onboarding = () => {
                         />
                     </div>
                     <div className="grid justify-end px-5">
-                        <AppButton
-                            variant="secondary"
-                            ariaLabel="Sign in to your account"
-                            className="w-36 py-2 text-sm"
-                        >
-                            Sign In
-                        </AppButton>
+                        <Link href="/auth/sign-in">
+                            <AppButton
+                                variant="secondary"
+                                ariaLabel="Sign in to your account"
+                                className="w-36 py-2.75 font-semibold text-[16px] leading-6"
+                            >
+                                Sign In
+                            </AppButton>
+                        </Link>
                     </div>
                 </div>
 
@@ -52,14 +55,7 @@ const Onboarding = () => {
                 <div className="flex flex-col flex-1 px-5 pt-9.25 pb-8 gap-2.5">
 
                     {/* Brand wordmark */}
-                    <p
-                        aria-label="Chuks Kitchen"
-                        role="img"
-                        className="text-[#FF7A18] text-center leading-none"
-                        style={{ fontFamily: '"Island Moments", cursive', fontSize: '40.81px' }}
-                    >
-                        Chuks Kitchen
-                    </p>
+                   <BrandLogo />
 
                     {/* Headline + description */}
                     <div className="flex flex-col gap-3">
@@ -67,7 +63,7 @@ const Onboarding = () => {
                             Your Authentic Taste of Nigeria
                         </AppHeading>
 
-                        <p className="text-[#4B5563] text-base leading-6.5 font-normal font-[Poppins]">
+                        <p className="text-[#1F2937] tracking-tighter leading-6.5 text-base font-normal">
                             Experience homemade flavors delivered fresh to your desk or home.
                             We bring the rich culinary heritage of Nigeria right to your doorstep.
                         </p>
@@ -87,14 +83,14 @@ const Onboarding = () => {
                         <AppButton
                             variant="primary"
                             ariaLabel="Start your order now"
-                            className="w-full"
+                            className="w-full py-4.5"
                         >
                             Start Your Order
                         </AppButton>
                         <AppButton
                             variant="secondary"
                             ariaLabel="Learn more about Chuks Kitchen"
-                            className="w-full"
+                            className="w-full py-4.5"
                         >
                             Learn More About Us
                         </AppButton>
@@ -106,65 +102,59 @@ const Onboarding = () => {
             {/* ══════════════════════════════════════════════
           TABLET + DESKTOP LAYOUT  (md and above)
       ══════════════════════════════════════════════ */}
-            <div className="hidden md:flex flex-col min-h-screen">
+            <div className="hidden min-h-screen md:grid md:grid-cols-[40%_1fr] lg:grid-cols-[42%_1fr] lg:gap-10">
 
-                {/* ── Top nav bar ──
-                <header className="w-full flex items-center justify-end px-8 lg:px-12 py-4">
-                    <p
-                        aria-label="Chuks Kitchen"
-                        role="img"
-                        className="text-[#FF7A18]"
-                        style={{ fontFamily: '"Island Moments", cursive', fontSize: '36px', lineHeight: 1 }}
-                    >
-                        Chuks Kitchen
-                    </p>
-                    <AppButton
-                        variant="secondary"
-                        ariaLabel="Sign in to your account"
-                        className="w-25 py-2 text-sm"
-                    >
-                        Sign In
-                    </AppButton>
-                </header> */}
+                {/* Left — hero image, fills full height of main */}
+                <div className="relative w-full lg:w-full h-auto shrink-0">
+                    <Image
+                        src="/images/onboarding-desktop.png"
+                        alt="Friends and family enjoying authentic Nigerian food together"
+                        fill
+                        sizes="100vw"
+                        className="object-cover object-center"
+                        priority
+                    />
+                </div>
 
-                {/* ── Main two-column split ── */}
-                <main className="flex flex-1">
+                {/* Right — content panel */}
+                <section
+                    className="flex flex-col justify-center md:gap-6 xl:gap-9 w-full px-4 lg:px-12.25"
+                    aria-label="Welcome to Chuks Kitchen"
+                >
 
-                    {/* Left — hero image, fills full height of main */}
-                    <div className="relative w-[48%] lg:w-[52%] shrink-0">
-                        <Image
-                            src="/images/onboarding-desktop.png"
-                            alt="Friends and family enjoying authentic Nigerian food together"
-                            fill
-                            sizes="100vw"
-                            className="object-cover object-center"
-                            priority
-                        />
-                    </div>
+                    {/* ── Top nav bar ── */}
+                    <header className="w-full flex justify-between">
+                        <BrandLogo />
+                        <Link href="/auth/sign-in">
+                        <AppButton
+                            variant="secondary"
+                            ariaLabel="Sign in to your account"
+                            className=" text-md font-semibold py-3.75 px-12 "
+                        >
+                            Sign In
+                        </AppButton>
+                        </Link>
+                    </header>
 
-                    {/* Right — content panel */}
-                    <section
-                        className="flex flex-col justify-center flex-1 px-10 lg:px-16 xl:px-20 py-12 gap-6"
-                        aria-label="Welcome to Chuks Kitchen"
-                    >
-
+                    <div className="flex flex-col md:gap-4.5 lg:gap-9">
                         {/* Headline */}
                         <AppHeading
                             variant="h1"
                             as="h1"
                             colorStyle="dark"
-                            className="text-right text-[36px] lg:text-[40px] leading-[1.2]"
+                            className="text-left text-[36px] lg:text-[40px] leading-[1.2]"
                         >
                             Your Authentic Taste of Nigeria
                         </AppHeading>
 
                         {/* Description */}
-                        <p className="text-[#4B5563] text-[15px] lg:text-base leading-6.5 font-normal font-[Poppins]">
+                        <p className="text-[#4B5563] text-[16px] leading-6 font-medium">
                             Experience homemade flavors delivered fresh to your desk or home.
                             We bring the rich culinary heritage of Nigeria right to your doorstep.
                         </p>
 
-                        {/* Feature cards — 2-col grid on desktop matching the design */}
+
+
                         <ul
                             className="grid grid-cols-2 gap-x-4 gap-y-3 list-none p-0 m-0"
                             role="list"
@@ -177,45 +167,47 @@ const Onboarding = () => {
                             ))}
                         </ul>
 
-                        {/* CTA buttons */}
-                        <div className="flex flex-col gap-3 mt-2">
-                            <AppButton
-                                variant="primary"
-                                ariaLabel="Start your order now"
-                                className="w-full"
-                            >
-                                Start Your Order
-                            </AppButton>
-                            <AppButton
-                                variant="secondary"
-                                ariaLabel="Learn more about Chuks Kitchen"
-                                className="w-full"
-                            >
-                                Learn More About Us
-                            </AppButton>
-                        </div>
-                    </section>
-                </main>
 
-                {/* ── Footer bar ── */}
-                <footer className="w-full text-center py-4 px-8">
-                    <p className="text-[#9CA3AF] text-xs font-[Poppins]">
-                        © 2024 Chuks Kitchen.{' '}
-                        <Link
-                            href="/privacy"
-                            className="hover:text-[#FF7A18] underline-offset-2 hover:underline transition-colors focus-visible:outlinefocus-visible:outline-[#FF7A18] rounded-sm"
-                        >
-                            Privacy Policy
-                        </Link>
-                        {' '}
-                        <Link
-                            href="/terms"
-                            className="hover:text-[#FF7A18] underline-offset-2 hover:underline transition-colors focus-visible:outline focus-visible:outline-[#FF7A18] rounded-sm"
-                        >
-                            Terms of Service
-                        </Link>
-                    </p>
-                </footer>
+                        <div className="flex flex-col gap-9">
+                            {/* CTA buttons */}
+                            <div className="flex flex-col gap-3">
+                                <AppButton
+                                    variant="primary"
+                                    ariaLabel="Start your order now"
+                                    className="w-full py-[18px]"
+                                >
+                                    Start Your Order
+                                </AppButton>
+                                <AppButton
+                                    variant="secondary"
+                                    ariaLabel="Learn more about Chuks Kitchen"
+                                    className="w-full py-4.5"
+                                >
+                                    Learn More About Us
+                                </AppButton>
+                            </div>
+                        </div>
+                    </div>
+                    {/* ── Footer bar ── */}
+                    <footer className="w-full text-center">
+                        <p className="font-medium leading-5 text-[14px]">
+                            © 2024 Chuks Kitchen.{'  '}
+                            <Link
+                                href="/privacy"
+                                className="hover:text-[#cbc4ec] text-[#64B5F6] font-medium leading-5 text-[14px] underline-offset-2 hover:underline transition-colors focus-visible:outline focus-visible:outline-[#64B5F6] rounded-sm"
+                            >
+                                Privacy Policy
+                            </Link>
+                            {' '}
+                            <Link
+                                href="/terms"
+                                className="hover:text-[#cbc4ec] text-[#64B5F6] font-medium leading-5 text-[14px] underline-offset-2 hover:underline transition-colors focus-visible:outline focus-visible:outline-[#64B5F6] rounded-sm"
+                            >
+                                Terms of Service
+                            </Link>
+                        </p>
+                    </footer>
+                </section>
             </div>
 
         </div>

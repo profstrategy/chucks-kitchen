@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Inter, Island_Moments } from "next/font/google";
+import { Roboto, Inter, Island_Moments } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/reusables/footer";
 
 const islandMoments = Island_Moments({
   variable: "--font-island-moments",
@@ -8,6 +9,13 @@ const islandMoments = Island_Moments({
   weight: "400",
   fallback: ["cursive"],
 })
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  fallback: ["sans-serif"],
+});
 
 const geistMono = Inter({
   variable: "--font-inter",
@@ -47,9 +55,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${islandMoments.variable} ${geistMono.variable} antialiased`}
+        className={`${islandMoments.variable} ${roboto.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 type Props = {
     children: React.ReactNode,
     icon: React.ReactNode,
-    provider: 'google' | 'apple'
+    provider: 'google' | 'facebook'
     onClick?: () => void
 }
 
@@ -12,7 +12,7 @@ const AuthButton = (props: Props) => {
     return (
         <button
             type="button"
-            className="bg-white border border-[#BDBDBD] w-auto py-1.5 flex items-center gap-2 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="bg-white border border-sub-text-on-black w-auto py-1.5 flex justify-center items-center gap-2 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-600"
             aria-label={label}
             onClick={onClick}
         >
