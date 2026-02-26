@@ -32,7 +32,7 @@ const PopularCategory = () => {
                         {mobileItems.map((category) => (
                             <AppCard
                                 key={category.id}
-                                variant="explore"
+                                variant="popular"
                                 title={category.name}
                                 imageAlt={`${category.name} image`}
                                 imageSrc={category.image}
@@ -45,7 +45,7 @@ const PopularCategory = () => {
                         {popularCategories.map((category) => (
                             <AppCard
                                 key={category.id}
-                                variant="explore"
+                                variant="popular"
                                 title={category.name}
                                 imageAlt={`${category.name} image`}
                                 imageSrc={category.image}

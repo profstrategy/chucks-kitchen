@@ -76,7 +76,7 @@ const ChefSpecial = () => {
                                 letterSpacing: '-0.02em',
                             }}
                         >
-                            View All Categories
+                            View All Specials
                         </p>
                     )}
                 </>
