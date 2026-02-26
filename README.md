@@ -431,7 +431,7 @@ public/
 
 ## Contributing
 
-1. Branch from `main` using the convention `feature/your-feature-name` or `fix/bug-description`
+1. Branch from `prod` using the convention `feature/your-feature-name` or `fix/bug-description`
 2. Keep components in `components/reusables/` truly generic — no screen-specific logic inside them
 3. All new interactive elements must meet WCAG 2.1 AA — `focus-visible` styles and `aria-label` are non-negotiable
 4. Data arrays that are currently hardcoded are intentionally at **module level** (outside component functions) — keep them there until API integration
