@@ -2,14 +2,27 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F2937;
+  --primary-orange: #FF7A18;
+  --primary-blue: #1E88E5;
+  --sub-text-on-black: #BDBDBD;
+  --input-text-color: #3B4758;
+  --input-label-color: #3B4758;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-inter: var(--font-inter);
+  --font-roboto: var(--font-roboto);
+  --font-island-moments: var(--font-island-moments);
+
+  --color-primary-orange: var(--primary-orange);
+  --color-primary-blue: var(--primary-blue);
+  --color-sub-text-on-black: var(--sub-text-on-black);
+  --color-input-text-color: var(--input-text-color);
+  --color-input-label-color: var(--input-label-color);
 }
 
 @media (prefers-color-scheme: dark) {

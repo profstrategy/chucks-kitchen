@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Inter } from "next/font/google";
+import { Roboto, Inter, Island_Moments } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/reusables/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const islandMoments = Island_Moments({
+  variable: "--font-island-moments",
   subsets: ["latin"],
+  weight: "400",
+  fallback: ["cursive"],
+})
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  fallback: ["sans-serif"],
 });
 
 const geistMono = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
@@ -44,9 +55,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${islandMoments.variable} ${roboto.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
