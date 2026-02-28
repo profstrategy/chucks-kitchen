@@ -1,0 +1,50 @@
+
+@keyframes ck-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+  33%       { transform: translateY(-18px) rotate(6deg); opacity: 0.28; }
+  66%       { transform: translateY(-8px) rotate(-4deg); opacity: 0.22; }
+}
+
+@keyframes ck-fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ck-popIn {
+  0%   { opacity: 0; transform: scale(0.7); }
+  70%  { transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ck-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.ck-food-float {
+  animation: ck-float var(--ck-dur) ease-in-out var(--ck-delay) infinite;
+}
+
+.ck-fade-up-1 { animation: ck-fadeSlideUp 0.7s ease forwards; }
+.ck-fade-up-2 { animation: ck-fadeSlideUp 0.7s ease 0.15s both; }
+.ck-fade-up-3 { animation: ck-fadeSlideUp 0.7s ease 0.3s  both; }
+.ck-fade-up-4 { animation: ck-fadeSlideUp 0.7s ease 0.45s both; }
+
+.ck-pop-in {
+  animation: ck-popIn 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+.ck-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #FF7A18 0%,
+    #FFB347 40%,
+    #FF7A18 60%,
+    #FF7A18 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: ck-shimmer 3s linear infinite;
+}

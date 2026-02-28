@@ -80,13 +80,15 @@ const Onboarding = () => {
 
                     {/* CTA buttons — pushed to bottom */}
                     <div className="flex flex-col gap-3 mt-auto pt-2">
-                        <AppButton
-                            variant="primary"
-                            ariaLabel="Start your order now"
-                            className="w-full py-4.5"
-                        >
-                            Start Your Order
-                        </AppButton>
+                        <Link href={'/home'}>
+                            <AppButton
+                                variant="primary"
+                                ariaLabel="Start your order now"
+                                className="w-full py-[18px]"
+                            >
+                                Start Your Order
+                            </AppButton>
+                        </Link>
                         <AppButton
                             variant="secondary"
                             ariaLabel="Learn more about Chuks Kitchen"
