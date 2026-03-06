@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Home from "../pages/home-screen/home"
 import Navbar from "@/components/reusables/navbar"
+import InlineNavigation from "@/components/reusables/inline-navigation"
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -98,6 +99,7 @@ export default function HomePage() {
     <Navbar />
     <section className="min-h-screen bg-white">
       <Home />
+      <InlineNavigation />
     </section>
     </>
   )
