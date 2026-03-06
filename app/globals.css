@@ -5,6 +5,7 @@
   --foreground: #1F2937;
   --primary-orange: #FF7A18;
   --primary-blue: #1E88E5;
+  --lift-blue: #0081FE;
   --sub-text-on-black: #BDBDBD;
   --input-text-color: #3B4758;
   --input-label-color: #3B4758;
@@ -20,6 +21,7 @@
 
   --color-primary-orange: var(--primary-orange);
   --color-primary-blue: var(--primary-blue);
+  --color-lift-blue: var(--lift-blue);
   --color-sub-text-on-black: var(--sub-text-on-black);
   --color-input-text-color: var(--input-text-color);
   --color-input-label-color: var(--input-label-color);

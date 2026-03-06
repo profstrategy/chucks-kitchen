@@ -5,6 +5,7 @@ import MenuCategories from "../pages/explore-screen/menu-categories"
 import PopularSection from "../pages/explore-screen/popular-section"
 import JollofRiceEntrees from "../pages/explore-screen/jollof-rice-entrees"
 import SwallowAndSoup from "../pages/explore-screen/swallow-soup"
+import InlineNavigation from "@/components/reusables/inline-navigation"
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
@@ -127,6 +128,7 @@ export default function ExplorePage() {
         <PopularSection />
         <JollofRiceEntrees />
         <SwallowAndSoup />
+        <InlineNavigation />
       </section>
     </>
   )
